@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
 	# attr_accessible :email, :username
 
 	#Relationships <3
-	has_many :links 
+	has_many :links
+	has_many :comments
 end
