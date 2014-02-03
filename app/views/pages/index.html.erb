@@ -1,4 +1,3 @@
-<%= link_to "New Reppost", new_link_path %>
 <ul>
   <% @links.each do |link| %>
     <li>
@@ -6,4 +5,5 @@
     	<p><a href="<%= link_path(link) %>">Comments</a></p>
     </li>
   <% end %>
+  <%= will_paginate @links, :page_links => false %>
 </ul>
