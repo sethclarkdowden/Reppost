@@ -1,2 +1,9 @@
-<h2>I AMA Homepage</h2>
 <%= link_to "New Reppost", new_link_path %>
+<ul>
+  <% @links.each do |link| %>
+    <li>
+    	<p><a href="<%= link.url %>"><%= link.title %></a></p>
+    	<p><a href="<%= link_path(link) %>">Comments</a></p>
+    </li>
+  <% end %>
+</ul>

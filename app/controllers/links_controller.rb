@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
 
 	def show
-
+		@link = Link.find params[:id]
 	end
 
 	def new
@@ -12,7 +12,7 @@ class LinksController < ApplicationController
 	def create
 		@link = Link.new params[:link].permit(:url, :title, :user_id)
 		if @link.save
-			redirect_to(:back)
+			redirect_to link_path(@link)
 		end
 	end
 
