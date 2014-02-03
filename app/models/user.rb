@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
 	#Relationships <3
 	has_many :links
 	has_many :comments
+	has_many :votes
 end

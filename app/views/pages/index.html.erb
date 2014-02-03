@@ -1,6 +1,10 @@
 <ul>
   <% @links.each do |link| %>
     <li>
+      Karma: <%= link.votes.where(:up => true).count - link.votes.where(:up => false).count %>
+    	<%= link_to "+", votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
+    	<%= link_to "●", votes_path(:vote => {:link_id => link.id, :up => nil}), :method => :post %>
+    	<%= link_to "-", votes_path(:vote => {:link_id => link.id, :up => false}), :method => :post %>
     	<p><a href="<%= link.url %>"><%= link.title %></a></p>
     	<p><a href="<%= link_path(link) %>">Comments</a></p>
     </li>
